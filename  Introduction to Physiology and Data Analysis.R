@@ -156,14 +156,13 @@ boxplot(Activity ~ Species, data = field_adductor_CSdata,
         xlab="Species",
         ylab="CS Activity (I.U./g wet mass)")
 
+
+
 #One-way ANOVA (and non-parametric) Is there a significant difference among the groups?
-#could not figure out how to incorporate multiple comparisins
 CS_ANOVA <- kruskal.test(Activity ~ Species, data = field_adductor_CSdata)
 print(CS_ANOVA)
-#summary(glht(kruskal.test, linfct = mcp(group = "Tukey")))
-#TukeyHSD(kruskal.test)
-
-
+#multi comparism 
+rstatix::dunn_test(formula = Activity ~ Species, data = field_adductor_CSdata)
 
 
 ################ Part five: regrouping data ###################
@@ -171,13 +170,8 @@ library(readr)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-#Call new combined data set
-MDH_CS_Data <- read.csv(file = "CSandMDH_Data.csv")
-head(MDH_CS_Data)
-library(dplyr)
-library(tidyr)
 
-# Load your dataset (replace with the correct path to your file)
+# Load dataset 
 data <- read_csv("CSandMDH_Data.csv")
 
 # Check the structure of the dataset
@@ -202,8 +196,6 @@ grouped_data <- data %>%
 # View the grouped data
 print(grouped_data)
 
-library(ggplot2)
-
 # Plot grouped data with violin and box plots for both MDH and CS
 ggplot(data, aes(x = Tissue, y = Activity, fill = Species)) +
   geom_violin(trim = FALSE, color = "black") +                   # Violin plot for distribution
@@ -220,7 +212,24 @@ ggplot(data, aes(x = Tissue, y = Activity, fill = Species)) +
   theme_minimal() +
   theme(legend.position = "bottom")                             # Adjust legend position
 
+# retype to analyze for error
+p1 <- ggplot(data, aes(x = Tissue, y = Activity, fill = Species)) +
+  geom_violin(trim = FALSE, color = "black") + 
+  geom_boxplot(width = 0.1, position = position_dodge(0.9), outlier.shape = NA) + 
+  stat_summary(fun.data = function(x) {                          # Error bars for 5-95th percentile
+    data.frame(ymin = quantile(x, 0.05), 
+               ymax = quantile(x, 0.95), 
+               y = median(x))
+  }, geom = "errorbar", width = 0.2, color = "black") + # Violin plot for distribution
+  facet_wrap(~ Enzyme, scales = "free_y") +                      # Facet by enzyme to separate MDH and CS
+  labs(title = "Grouped Box & Violin Plot (MDH and CS)", 
+       x = "Tissue Type", 
+       y = "Enzyme Activity (I.U./g wet mass)") +
+  theme_minimal() +
+  theme(legend.position = "bottom")   
 
-# Perform a two-way ANOVA to test for interaction between Species and Tissue
+p1
+
+# Perform a two-way ANOVA 
 two_way_anova <- aov(Activity ~ Species * Tissue, data = data)
 summary(two_way_anova)

@@ -1,0 +1,19 @@
+## Comp Physio Lab notebook
+
+### LAB 1: Intro to Data Analysis
+
+-   Decided to use R as my primary stats platform instead of prism because I dont care to learn prism and prefer to use this as an opportunity to learn new skills in R
+
+-   it was challenging to convert instructions from prism to R, good resources available for this online
+
+-   L169- One way, **non-parametric** ANOVA used kruskal.test funct.
+
+    \+ add on multi-comparison, Tukey funct. not compatible with kruskal instead used dunn.test function
+
+-   L200- violin plot with box plots and whiskers, first time doing this I had to do some research, used "the R book" and online platforms to build this
+
+    -   main problem is with error bar function I believe this has something to do the the fact that the hybrid cat. only occurs in the ab. tissue.
+
+### Lab 2 & 3: Enzyme Activity and Temp
+
+Primary question: How does temp effect the speed of reaction?
