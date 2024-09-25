@@ -16,4 +16,52 @@
 
 ### Lab 2 & 3: Enzyme Activity and Temp
 
-Primary question: How does temp effect the speed of reaction?
+Primary questions:
+
+1.  Is there a difference in MHD activity between mussels and crayfish?
+
+2.  Is there a difference in MDH activity at different temperatures?
+
+3.  Does the effect of temperature on MDH activity depend on the specific tissue type?
+
+ASMT: Methods write up due 09-27-24
+
+-   for lab 2 \>\> 1 graph, 2W ANOVA, q10 analysis
+
+    -   Q10 = (R 2 /R 1 )\^(10/(T2 - T1 )
+
+-   for lab 3 \>\> TBD (still need to transpose from prism to R)
+
+    -   think about a good system for this and confirm instructions in lab
+
+Notes:
+
+Pt 1)
+
+-   calculate Q10 by manipulating columns and create new column for those values
+
+-   use bar graph
+
+-   2-way ANAOVA
+
+### Lab 4: Insect Metabolism 
+
+Primary Questions:
+
+1) Sex and Metabolic Rate
+
+-   Unpaired t-test (assuming Gaussian distribution and SD)
+
+-   graph of my choice
+
+Is there a significant Difference between the sexes?
+
+2) Size and Metabolic Rate
+
+-   simple linear regression (using log of x and y)
+
+-   R squared val and p val
+
+-   Tranform graph??
+
+Is there
