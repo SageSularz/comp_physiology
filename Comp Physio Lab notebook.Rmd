@@ -44,11 +44,11 @@ Pt 1)
 
 -   2-way ANAOVA
 
-### Lab 4: Insect Metabolism 
+### Lab 4: Insect Metabolism
 
 Primary Questions:
 
-1) Sex and Metabolic Rate
+1)  Sex and Metabolic Rate
 
 -   Unpaired t-test (assuming Gaussian distribution and SD)
 
@@ -56,7 +56,7 @@ Primary Questions:
 
 Is there a significant Difference between the sexes?
 
-2) Size and Metabolic Rate
+2)  Size and Metabolic Rate
 
 -   simple linear regression (using log of x and y)
 
