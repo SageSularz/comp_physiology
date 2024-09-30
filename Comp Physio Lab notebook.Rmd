@@ -16,6 +16,8 @@
 
 ### Lab 2 & 3: Enzyme Activity and Temp
 
+**NOTE FOR METHODS - I have done my best with this data but switched groups between the days and the data from the first data was very inconsistent and I dont trust it. this had a large effect on my ANOVA and if this were a full write up it would be discussed but will not be in the methods of this report however I do recognize the error and its impact.**
+
 Primary questions:
 
 1.  Is there a difference in MHD activity between mussels and crayfish?
