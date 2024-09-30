@@ -30,19 +30,13 @@ ASMT: Methods write up due 09-27-24
 
     -   Q10 = (R 2 /R 1 )\^(10/(T2 - T1 )
 
--   for lab 3 \>\> TBD (still need to transpose from prism to R)
+        Notes:
 
-    -   think about a good system for this and confirm instructions in lab
+-   2W ANOVA
 
-Notes:
+-   graph -\> y=activity x=temp (cont.) plot both species
 
-Pt 1)
-
--   calculate Q10 by manipulating columns and create new column for those values
-
--   use bar graph
-
--   2-way ANAOVA
+-   idk how to do Q10 probs just going to calculate in excel and add after but this is something I should learn how to do
 
 ### Lab 4: Insect Metabolism
 
