@@ -33,3 +33,17 @@ ggplot(enzymedata, aes(x = temp, y = IU.gfw, color = species)) +
 #Q10 
 #Q10 = (R 2 /R 1 )^(10/(T2 - T1 )
 
+#bc temp ranges are always 10 ds ^(10/t2-t1) will always = 1 so Q10=(R 2 /R 1 )
+
+#q10 mussel 15-25 C
+((enzymedata[2,"IU.gfw"])/(enzymedata[1,"IU.gfw"]))^(10/((enzymedata[2,"temp"])-(enzymedata[1,"temp"])))
+
+#q10 mussel 25-35 C
+((enzymedata[3,"IU.gfw"])/(enzymedata[2,"IU.gfw"])) #no need to include exponent wont change anything
+
+#q10 crawfish 15-25 C
+((enzymedata[5,"IU.gfw"])/(enzymedata[4,"IU.gfw"]))
+
+#q10 crawfish 25-35 C
+((enzymedata[6,"IU.gfw"])/(enzymedata[5,"IU.gfw"]))
+
