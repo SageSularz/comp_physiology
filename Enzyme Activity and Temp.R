@@ -33,6 +33,44 @@ ggplot(enzymedata, aes(x = temp, y = IU.gfw, color = species)) +
 #Q10 
 #Q10 = (R 2 /R 1 )^(10/(T2 - T1 )
 
+library(dplyr)
+library(tidyr)
+
+enzymedata |>
+  select(species, temp, IU.gfw) |>
+  pivot_wider(values_from = IU.gfw,
+              names_from = temp) |>
+  mutate(twentyfive_fifteen = `25`/`15`,
+         thirtyfive_twenty = `35`/`25`)
+
+
+
+enzymedata |>
+  mutate(temp = paste0("temp_", temp)) |>
+  select(species, temp, IU.gfw) |>
+  pivot_wider(values_from = IU.gfw,
+              names_from = temp) |>
+  mutate(q10_twentyfive_fifteen = temp_25/temp_15,
+         q10_thirtyfive_twenty = temp_35/temp_25)
+
+enzymedata$IU.gfw[which(enzymedata$species == "Mussel" | enzymedata$temp == 35)]/
+  enzymedata$IU.gfw[which(enzymedata$species == "Mussel" & enzymedata$temp == 25)]
+
+enzymedata$IU.gfw[3]/enzymedata$IU.gfw[2]
+
+dat <- enzymedata
+
+dat[1,4] <- NA
+dat
+
+dat |>
+  filter(!is.na(IU.gfw)) |>
+  select(species, temp, IU.gfw) |>
+  pivot_wider(values_from = IU.gfw,
+              names_from = temp) |>
+  mutate(twentyfive_fifteen = `25`/`15`,
+         thirtyfive_twenty = `35`/`25`)
+
 #bc temp ranges are always 10 ds ^(10/t2-t1) will always = 1 so Q10=(R 2 /R 1 )
 
 #q10 mussel 15-25 C
