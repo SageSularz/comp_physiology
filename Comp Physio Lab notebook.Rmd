@@ -26,19 +26,15 @@ Primary questions:
 
 3.  Does the effect of temperature on MDH activity depend on the specific tissue type?
 
-ASMT: Methods write up due 09-27-24
+ASMT: Methods write up
 
--   for lab 2 \>\> 1 graph, 2W ANOVA, q10 analysis
+-   import data
 
-    -   Q10 = (R 2 /R 1 )\^(10/(T2 - T1 )
+-   create box plot in ggplot comparing species and temp
 
-        Notes:
+-   run 2way ANOVA
 
--   2W ANOVA
-
--   graph -\> y=activity x=temp (cont.) plot both species
-
--   idk how to do Q10 probs just going to calculate in excel and add after but this is something I should learn how to do
+-   calculate Q10
 
 ### Lab 4: Insect Metabolism
 
