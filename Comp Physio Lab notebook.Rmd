@@ -40,7 +40,14 @@ ASMT: Methods write up
 
 Primary Questions:
 
-1)  Sex and Metabolic Rate
+-   What is the effect of sex on metabolic rate?\
+    What is the effect of size on metabolic rate?\
+    Is there a combined effect of sex and size on metabolic rate?\
+    What is the effect of temperature on metabolic rate?\
+    Is there a combined effect of sex and temperature on metabolic rate?\
+    Is there a combined effect of size and temperature on metabolic rate?
+
+    1)  Sex and Metabolic Rate
 
 -   Unpaired t-test (assuming Gaussian distribution and SD)
 
