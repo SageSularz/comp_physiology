@@ -38,29 +38,40 @@ ASMT: Methods write up
 
 ### Lab 4: Insect Metabolism
 
-Primary Questions:
+1.  Sex and Metabolic Rate:
 
--   What is the effect of sex on metabolic rate?\
-    What is the effect of size on metabolic rate?\
-    Is there a combined effect of sex and size on metabolic rate?\
-    What is the effect of temperature on metabolic rate?\
-    Is there a combined effect of sex and temperature on metabolic rate?\
-    Is there a combined effect of size and temperature on metabolic rate?
+    -   Conduct a t-test to compare metabolic rates between sexes.
 
-    1)  Sex and Metabolic Rate
+    -   Create a boxplot of metabolic rate by sex.
 
--   Unpaired t-test (assuming Gaussian distribution and SD)
+2.  Size and Metabolic Rate:
 
--   graph of my choice
+    -   Perform a log-transformed linear regression of metabolic rate against size.
 
-Is there a significant Difference between the sexes?
+    -   Generate a scatter plot with a regression line for the log-transformed data.
 
-2)  Size and Metabolic Rate
+3.  Sex, Size, and Metabolic Rate:
 
--   simple linear regression (using log of x and y)
+    -   Run a linear regression with an interaction term between sex and log-transformed size.
 
--   R squared val and p val
+    -   Create a scatter plot with separate regression lines for each sex.
 
--   Tranform graph??
+4.  Temperature and Metabolic Rate:
 
-Is there
+    -   Conduct a t-test to compare metabolic rates between two temperature treatments.
+
+    -   Create a boxplot of metabolic rate by temperature.
+
+    -   Calculate the Q10 value for metabolic rate between temperatures.
+
+5.  Sex and Temperature and Metabolic Rate:
+
+    -   Perform a two-way ANOVA to analyze the effects of sex and temperature and their interaction on metabolic rate.
+
+    -   Produce a boxplot or interaction plot to show the combined effects of sex and temperature.
+
+6.  Size and Temperature and Metabolic Rate:
+
+    -   Run a linear regression with interaction between log-transformed size and temperature.
+
+    -   Generate a scatter plot with regression lines for each temperature.
