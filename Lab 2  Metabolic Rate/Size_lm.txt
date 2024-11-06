@@ -1,0 +1,53 @@
+[1] "LM log rate ~ log size == MALE"
+[1] 0.69 0.45 1.11 0.86 5.80 2.25
+
+	Welch Two Sample t-test
+
+data:  model_ice and model_rt
+t = -2.0241, df = 39.645, p-value = 0.04973
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.747380873 -0.001073673
+sample estimates:
+mean of x mean of y 
+ 1.482273  2.356500 
+
+  mass_specific_MR temp
+1             0.69  Ice
+2             0.45  Ice
+3             1.11  Ice
+4             0.86  Ice
+5             5.80  Ice
+6             2.25  Ice
+  mass_specific_MR temp
+1             0.69  Ice
+2             0.45  Ice
+3             1.11  Ice
+4             0.86  Ice
+5             5.80  Ice
+6             2.25  Ice
+[1] 2.3565
+[1] 1.524178
+[1] 1.524178
+[1] 1.524178
+   sex temp mass_g mass_specific_MR   LogSize     LogRate
+1 Male   RT   0.25             4.51 -1.386294  1.50629715
+2 Male   RT   0.29             2.71 -1.237874  0.99694863
+3 Male   RT   0.30             2.40 -1.203973  0.87546874
+4 Male   RT   0.31             0.98 -1.171183 -0.02020271
+5 Male   RT   0.31             3.29 -1.171183  1.19088756
+6 Male   RT   0.34             1.07 -1.078810  0.06765865
+            Df Sum Sq Mean Sq F value Pr(>F)  
+temp         1   8.01   8.007   4.030 0.0518 .
+sex          1   2.67   2.669   1.343 0.2537  
+temp:sex     1   0.03   0.028   0.014 0.9058  
+Residuals   38  75.50   1.987                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            Df Sum Sq Mean Sq F value Pr(>F)  
+temp         1   8.01   8.007   4.030 0.0518 .
+sex          1   2.67   2.669   1.343 0.2537  
+temp:sex     1   0.03   0.028   0.014 0.9058  
+Residuals   38  75.50   1.987                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

@@ -1,0 +1,10 @@
+Call:
+   aov(formula = mass_specific_MR ~ temp * sex, data = metabolism.data)
+
+Terms:
+                    temp      sex temp:sex Residuals
+Sum of Squares   8.00667  2.66893  0.02822  75.49630
+Deg. of Freedom        1        1        1        38
+
+Residual standard error: 1.409519
+Estimated effects may be unbalanced

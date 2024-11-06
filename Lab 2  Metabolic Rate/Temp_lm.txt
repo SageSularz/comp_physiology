@@ -1,0 +1,24 @@
+[1] "LM log rate ~ log temp == RT"
+
+Call:
+lm(formula = LogRate ~ LogSize, data = subset(metabolism.data, 
+    temp == "RT"))
+
+Coefficients:
+(Intercept)      LogSize  
+    -0.1878      -0.8859  
+
+[1] 0.1117696
+[1] 0.1496709
+[1] "LM log rate ~ log temp == Ice"
+
+Call:
+lm(formula = LogRate ~ LogSize, data = subset(metabolism.data, 
+    temp == "Ice"))
+
+Coefficients:
+(Intercept)      LogSize  
+     0.4117       0.3303  
+
+[1] 0.01580297
+[1] 0.5772317

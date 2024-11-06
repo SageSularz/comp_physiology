@@ -1,0 +1,12 @@
+
+	Welch Two Sample t-test
+
+data:  metabolism.data$mass_specific_MR by metabolism.data$sex
+t = -1.2099, df = 36.862, p-value = 0.234
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ -1.4550462  0.3671371
+sample estimates:
+mean in group Female   mean in group Male 
+            1.639545             2.183500 
+

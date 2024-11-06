@@ -1,6 +1,6 @@
 ## Comp Physio Lab notebook
 
-### LAB 1: Intro to Data Analysis
+### Intro to Data Analysis
 
 -   Decided to use R as my primary stats platform instead of prism because I dont care to learn prism and prefer to use this as an opportunity to learn new skills in R
 
@@ -14,7 +14,7 @@
 
     -   main problem is with error bar function I believe this has something to do the the fact that the hybrid cat. only occurs in the ab. tissue.
 
-### Lab 2 & 3: Enzyme Activity and Temp
+### Lab 1: Enzyme Activity and Temp
 
 **NOTE FOR METHODS - I have done my best with this data but switched groups between the days and the data from the first data was very inconsistent and I dont trust it. this had a large effect on my ANOVA and if this were a full write up it would be discussed but will not be in the methods of this report however I do recognize the error and its impact.**
 
@@ -36,7 +36,7 @@ ASMT: Methods write up
 
 -   calculate Q10
 
-### Lab 4: Insect Metabolism
+### Lab 2: Insect Metabolism
 
 1.  Sex and Metabolic Rate:
 
