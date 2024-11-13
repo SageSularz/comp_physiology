@@ -76,7 +76,7 @@ ASMT: Methods write up
 
     -   Generate a scatter plot with regression lines for each temperature.
 
-# Lab 3 - Oxidative Stress
+### Lab 3 - Oxidative Stress
 
 Figure 1: Box plot of Catalase activity (I.U. /mg f.w.) by life stage (pupae vs adult) colored by genotype (SK vs VT8)
 
@@ -87,3 +87,24 @@ two way ANOVA w/ 3 Pvalues
 -   genotype
 
 -   interaction of LS x Geno
+
+# Independent Project
+
+Fittness Assay
+
+1.  ANOVA: Treatment \~ Nicotine, speed
+
+2.  T-test: Nicotine \~ length
+
+3.  Boxplot: x=nicotine y=speed color=treatment
+
+4.  Boxplot: x=nicotine y=length
+
+\*could sub violin plot or similar
+
+\
+Food Preference
+
+1.  Chi squared treatmeant \~ nicotine \~ color
+
+2.  Histogram 
