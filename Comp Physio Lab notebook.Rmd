@@ -75,3 +75,15 @@ ASMT: Methods write up
     -   Run a linear regression with interaction between log-transformed size and temperature.
 
     -   Generate a scatter plot with regression lines for each temperature.
+
+# Lab 3 - Oxidative Stress
+
+Figure 1: Box plot of Catalase activity (I.U. /mg f.w.) by life stage (pupae vs adult) colored by genotype (SK vs VT8)
+
+two way ANOVA w/ 3 Pvalues
+
+-   life stage
+
+-   genotype
+
+-   interaction of LS x Geno

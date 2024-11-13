@@ -1,0 +1,10 @@
+Call:
+   aov(formula = iu_mgfw ~ life_stage * genotype, data = cat.data)
+
+Terms:
+                life_stage genotype life_stage:genotype Residuals
+Sum of Squares     1.37517  0.22745             0.42282  34.75320
+Deg. of Freedom          1        1                   1       140
+
+Residual standard error: 0.498234
+Estimated effects may be unbalanced

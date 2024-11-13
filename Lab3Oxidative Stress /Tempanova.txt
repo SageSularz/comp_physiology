@@ -1,0 +1,10 @@
+Call:
+   aov(formula = iu_mgfw ~ temp * genotype, data = cat.data)
+
+Terms:
+                    temp genotype temp:genotype Residuals
+Sum of Squares   0.07977  0.22745       0.05366  36.41777
+Deg. of Freedom        1        1             1       140
+
+Residual standard error: 0.5100264
+Estimated effects may be unbalanced
