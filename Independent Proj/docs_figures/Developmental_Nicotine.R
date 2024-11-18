@@ -98,11 +98,28 @@ p1
 ##
 ############################################################################
 
+color_assay_data <- read.csv(file = "color_assay.csv") 
+head(color_assay_data)
 
+contingency_table <- table(
+  treatment = color_assay_data$treatment,
+  nic_dose = color_assay_data$nic_dose,
+  color = color_assay_data$color
+)
+head(contingency_table)
+# Fit and summarize the saturated model
+library(MASS)
+saturated_model <- loglm(~ treatment * nic_dose * color, data = contingency_table)
+summary(saturated_model)
 
+# Fit a reduced model and compare
+reduced_model <- loglm(~ treatment + nic_dose + color + treatment:nic_dose + treatment:color + nic_dose:color, data = contingency_table)
+anova(saturated_model, reduced_model)
 
-
-
+# Visualize the table
+library(grid)
+library(vcd)
+mosaic(contingency_table, shade = TRUE, legend = TRUE)
 
 
 

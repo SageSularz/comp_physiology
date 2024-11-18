@@ -1,0 +1,17 @@
+﻿treatment,nic_dose,color
+dev,ctrl,red
+dev,ctrl,red
+adult,ctrl,red
+adult,ctrl,red
+dev,0.01,blue
+dev,0.01,blue
+adult,0.01,purple
+adult,0.01,purple
+dev,0.5,blue
+dev,0.5,blue
+adult,0.5,blue
+adult,0.5,purple
+dev,0.1,blue
+dev,0.1,blue
+adult,0.1,blue
+adult,0.1,blue
