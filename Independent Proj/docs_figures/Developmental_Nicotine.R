@@ -19,9 +19,10 @@ library(tidyr)
 
 setwd("~/Desktop/School /Comp. Physiology/LabWork/comp_physiology/Independent Proj/")
 #call data
-nicdata <- read.csv(file = "nic_data.csv") 
-head(nicdata)
-
+climbingdata <- read.csv(file = "climbingdata.csv") 
+hightdata <- read.csv(file = "hightdata.csv") 
+head(climbingdata)
+head(hightdata)
 ############################################################################
 ##
 # 1. Effect of nicotine concentration and life stage on climbing speed
@@ -29,68 +30,121 @@ head(nicdata)
 ############################################################################
 
 #ANOVA
-climbinganova <- aov(speed ~ nic_dose * treatment, data = nicdata)
+climbinganova <- aov(time ~ nic_dose, data = climbingdata)
 summary(climbinganova)
 
-#sink("climbinganova.txt")  
-#print(climbinganova)   
-#sink() 
+sink("climbinganova.txt")  
+print(summary(climbinganova))   
+sink() 
 
-ggplot(nicdata, aes(x=nic_dose, y=speed, fill=treatment)) +
-  geom_boxplot() +
-  labs(x="Nicotine Doseage", y="Climbing Speed (mm/sec)") +
-  scale_fill_manual(values=c("adult"="lightblue3", "dev"="tomato")) +
+ggplot(climbingdata, aes(x = as.factor(nic_dose), y = time)) +
+  geom_boxplot(fill = "#0073C2FF", color = "black", alpha = 0.7) +
+  labs(
+    title = "Boxplot of Climbing Speed Across Nicotine Dosages",
+    x = "Nicotine Dosage",
+    y = "Climbing Speed (sec)"
+  ) +
   theme_minimal() +
-  theme(legend.position = "top") 
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.position = "none"
+  )
 
 
+
+ggplot(climbingdata, aes(x = nic_dose, y = time, color = as.factor(nic_dose))) +
+  geom_point(size = 3, alpha = 0.8) +
+  labs(
+    title = "Scatter Plot of Time vs Nicotine Dosage",
+    x = "Nicotine Dosage",
+    y = "Time",
+    color = "Nicotine Dosage"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.title = element_text(size = 12),
+    legend.position = "right"
+  )
+
+# Filter the data for 0.0 dose
+dose_0 <- climbingdata %>% filter(nic_dose == 0.0)
+
+# Filter the data for 0.5 dose
+dose_0_5 <- climbingdata %>% filter(nic_dose == 0.5)
+
+# Plot for 0.0 dose
+plot_0 <- ggplot(dose_0, aes(x = time, y = nic_dose)) +
+  geom_point(color = "blue", size = 3, alpha = 0.8) +
+  labs(
+    title = "Scatter Plot for 0.0 Nicotine Dose",
+    x = "Time",
+    y = "Nicotine Dose"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.title = element_text(size = 12)
+  )
+
+# Plot for 0.5 dose
+plot_0_5 <- ggplot(dose_0_5, aes(x = time, y = nic_dose)) +
+  geom_point(color = "green", size = 3, alpha = 0.8) +
+  labs(
+    title = "Scatter Plot for 0.5 Nicotine Dose",
+    x = "Time",
+    y = "Nicotine Dose"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.title = element_text(size = 12)
+  )
+
+# Print the plots
+print(plot_0)
+print(plot_0_5)
 ############################################################################
 ##
-# 2. Effect of nicotine concentration in development on puparium length
+# 2. Effect of nicotine concentration in development on puparium hight
 ##
 ############################################################################
 
-nicdata_filtered <- nicdata %>% filter(!is.na(length))
-head(nicdata_filtered)
+#nicdata_filtered <- nicdata %>% filter(!is.na(length))
+#head(nicdata_filtered)
 
-pupaeanova <- aov(length ~ nic_dose, data = nicdata_filtered)
+pupaeanova <- aov(hight ~ nic_dose, data = hightdata)
 summary(pupaeanova)
 
 
-#sink("pupaeTtest.txt") 
-#print(pupaeTtest)       
-#sink()                     
+sink("pupaeanova.txt") 
+print(summary(pupaeanova))       
+sink()                     
 
-ggplot(nicdata_filtered, aes(x=nic_dose, y=length)) +
+ggplot(hightdata, aes(x=nic_dose, y=hight)) +
   geom_boxplot() +
-  labs(x="Nicotine Doseage", y="Pupae Length (mm)") +
+  labs(x="Nicotine Doseage", y="Pupae hight (cm)") +
   theme_minimal() +
   theme(legend.position = "top") 
 
-p1 <- ggplot(nicdata_filtered, aes(x = nic_dose, y = length)) +
-  geom_violin(trim = FALSE, color = "black", fill = "lightblue") +
-  geom_boxplot(width = 0.1, position = position_dodge(0.9), outlier.shape = NA) +
-  stat_summary(
-    fun.data = function(x) {
-      data.frame(
-        ymin = quantile(x, 0.05),
-        ymax = quantile(x, 0.95),
-        y = median(x)
-      )
-    },
-    geom = "errorbar", 
-    width = 0.2, 
-    color = "black"
-  ) +
+ggplot(hightdata, aes(x = nic_dose, y = hight)) +
+  geom_point(color = "#0073C2FF", size = 3, alpha = 0.8) + 
+  geom_smooth(method = "lm", se = TRUE, color = "#EFC000FF", fill = "#EFC00033") +
   labs(
-    title = "Grouped Box & Violin Plot for Nicotine Dose",
-    x = "Nicotine Dose",
-    y = "Length"
+    title = "Relationship Between Nicotine Dosage and Pupae Height",
+    x = "Nicotine Dosage",
+    y = "Pupae Height (cm)"
   ) +
-  theme_minimal()
-  
-
-p1
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.title = element_text(size = 12, face = "bold"),
+    axis.text = element_text(size = 10),
+    legend.position = "none"
+  )
+ggsave("Nicotine_vs_Pupae_Height.pdf", plot = plot, width = 8, height = 6)
 
 ############################################################################
 ##

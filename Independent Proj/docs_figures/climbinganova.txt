@@ -1,0 +1,5 @@
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+nic_dose     3  105.9   35.31   6.462 0.000585 ***
+Residuals   77  420.8    5.46                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
